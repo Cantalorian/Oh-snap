@@ -12,6 +12,11 @@ function Nav(props) {
     document.title = capitalizeFirstLetter(currentCategory.name);
   }, [currentCategory]);
 
+  const handleClick = (item) => {
+    console.log(item);
+    return item;
+  };
+
   return (
     <header className="flex-row px-1">
       <h2>
@@ -27,7 +32,9 @@ function Nav(props) {
             </a>
           </li>
           <li className={"mx-2"}>
-            <span>Contact</span>
+            <span onClick={() => handleClick('Contact')}>
+              Contact
+            </span>
           </li>
           {categories.map((category) => (
             <li
